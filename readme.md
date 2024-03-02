@@ -7,4 +7,3 @@ Welcome to the DaD Jokes Database, your go-to source for a dose of dad humor! Th
 - User-friendly UI
 - Categorized Jokes
 - Search Functionality
-- Themed Joke 
