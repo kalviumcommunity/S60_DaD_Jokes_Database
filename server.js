@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+app.get("/", (req, res) => {
+  res.redirect("/ping");
+});
+
 app.get("/ping", (req, res) => {
   res.send("🦇");
 });
