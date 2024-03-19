@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const app = express();
+const route = require("./route")
 
 const URI = process.env.URI;
 
@@ -19,12 +20,11 @@ mongoose
 
 app.get("/ping", (req, res) => {
   const isConnected = mongoose.connection.readyState === 1;
-  // Send response with database connection status
   res.json({
     database: isConnected ? "connected" : "disconnected",
   });
 });
 
-app.listen(4000, () => {
+route.listen(4000, () => {
   console.log("The wagon runs");
 });
