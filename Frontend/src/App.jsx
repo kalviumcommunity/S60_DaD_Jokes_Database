@@ -1,18 +1,29 @@
-import dummydata from "./Components/dummyData.json";
+import { useEffect, useState } from "react";
+import axios from "axios";
 function App() {
+  const [joke, setJoke] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/jokes")
+      .then((response) => {
+        // console.log(joke)÷
+        console.log(response.data.data);
+        setJoke(response.data.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching jokes:", error);
+      });
+  }, []);
   return (
-    <div className="data">
-      {dummydata.map((data) => {
-        return (
-          <div key={data.id}>
-            {data.Joke}
-            <p>{data.Tag}</p>
-            {data.rating.map((item) => {
-              return <div key={item.id}>{item.star}</div>;
-            })}
+    <div>
+      <div>
+        {joke.map((data, index) => (
+          <div key={index}>
+            <p>{data.joke}</p>
+            <p>- {data.tag}</p>
           </div>
-        );
-      })}
+        ))}
+      </div>
     </div>
   );
 }
