@@ -7,7 +7,7 @@ function App() {
       .get("http://localhost:4000/jokes")
       .then((response) => {
         // console.log(joke)÷
-        console.log(response.data.data);
+        // console.log(response.data.data);
         setJoke(response.data.data);
       })
       .catch((error) => {
