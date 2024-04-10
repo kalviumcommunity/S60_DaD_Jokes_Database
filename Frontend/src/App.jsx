@@ -1,18 +1,18 @@
-import dummydata from "./Components/dummyData.json";
+import AddJokes from "./Components/AddJokes";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Users from "./Components/Users";
+
 function App() {
   return (
-    <div className="data">
-      {dummydata.map((data) => {
-        return (
-          <div key={data.id}>
-            {data.Joke}
-            <p>{data.Tag}</p>
-            {data.rating.map((item) => {
-              return <div key={item.id}>{item.star}</div>;
-            })}
-          </div>
-        );
-      })}
+    <div>
+      <BrowserRouter>
+        <div>
+          <Routes>
+            <Route path="/" element={<Users />} />
+            <Route path="/add" element={<AddJokes />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
