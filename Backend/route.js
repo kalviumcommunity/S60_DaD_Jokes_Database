@@ -23,7 +23,13 @@ app.post("/add", (request, response) => {
     .catch((err) => {
       response.status(400).json(err);
     });
+app.get("/Jokes", (request, response) => {
+  model
+    .find({})
+    .then((data) => response.json({ data }))
+    .catch((err) => response.json({ err }));
 });
+
 app.put("/update/:id", (req, res) => {
   res.send("Updated successfully");
 });
