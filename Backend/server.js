@@ -1,16 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
-const route = require("./route")
-const cors = require ('cors')
-
-const URI = process.env.URI;
 const app = express();
-app.use (cors())
-app.use (express.json())
-
+const route = require("./route");
+const model = require("./model");
+const cors=require("cors")
+const URI = process.env.URI;
+app.use(cors())
 mongoose
-  .connect(URI)
+  .connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected");
     app.get("/", (req, res) => {
