@@ -16,9 +16,9 @@ button {
 
 button:hover {
     background-color: rgb(142, 255, 142);
-}
-
-button span {
+    color: ;
+   }
+   button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
