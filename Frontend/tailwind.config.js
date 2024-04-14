@@ -2,7 +2,13 @@
 export default {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        head:["Bungee Spice"]
+      },
+    },
   },
+  
   plugins: [],
-};
+}
+
