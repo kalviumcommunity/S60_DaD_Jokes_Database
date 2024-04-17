@@ -15,5 +15,4 @@ const Jokes = mongoose.Schema({
   }
 });
 const model = mongoose.model("dad jokes", Jokes);
-
 module.exports = model;
