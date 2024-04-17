@@ -14,4 +14,5 @@ Come and flex your humour by posting your greatest dad jokes.
 - Themed Joke
 
 ## Deployed link: 
-- https://dadjokesdatabase.netlify.app
+- Frontend: https://dadjokesdatabase.netlify.app
+- Backend: https://dad-jokes-database.onrender.com
