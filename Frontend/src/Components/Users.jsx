@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import happy from "../assets/happy.gif"
+import happy from "../assets/happy.gif";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -11,12 +11,16 @@ function Users() {
       .then((result) => setUsers(result.data))
       .catch((err) => console.log(err));
   }, []);
+  
+  
+  
+  
   const handleDelete = (id) => {
     axios
       .delete(`http://localhost:4000/deleteUser/${id}`)
       .then(() => {
         // setUsers(result.data);
-        location.reload()
+        location.reload();
       })
       .catch((err) => console.log(err));
   };
@@ -35,6 +39,9 @@ function Users() {
               Add your joke
             </Link>
             <div>About</div>
+            <div>
+              <Link to="/login">Login</Link>
+            </div>
           </div>
         </div>
       </div>
@@ -46,7 +53,7 @@ function Users() {
                 return (
                   <div
                     key={index}
-                    className=" border py-8 px-10 m-5 rounded-xl"
+                    className=" border py-8 px-10 m-5 rounded-xl my-6 w-6/12 mx-auto"
                   >
                     <div className="flex justify-between">
                       <p className="pl-4"> {item.name}</p> <p>{item.email}</p>
