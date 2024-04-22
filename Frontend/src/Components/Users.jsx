@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import happy from "../assets/happy.gif"
+import happy from "../assets/happy.gif";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -16,7 +16,7 @@ function Users() {
       .delete(`http://localhost:4000/deleteUser/${id}`)
       .then(() => {
         // setUsers(result.data);
-        location.reload()
+        location.reload();
       })
       .catch((err) => console.log(err));
   };
@@ -46,7 +46,7 @@ function Users() {
                 return (
                   <div
                     key={index}
-                    className=" border py-8 px-10 m-5 rounded-xl"
+                    className=" border py-8 px-10 m-auto rounded-xl w-6/12 mt-4 "
                   >
                     <div className="flex justify-between">
                       <p className="pl-4"> {item.name}</p> <p>{item.email}</p>
