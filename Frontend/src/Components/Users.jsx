@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import happy from "../assets/happy.gif";
+import Nav from "./Nav";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -11,10 +11,6 @@ function Users() {
       .then((result) => setUsers(result.data))
       .catch((err) => console.log(err));
   }, []);
-  
-  
-  
-  
   const handleDelete = (id) => {
     axios
       .delete(`http://localhost:4000/deleteUser/${id}`)
@@ -27,24 +23,7 @@ function Users() {
 
   return (
     <div>
-      <div className="bg-neutral-950 py-6 border flex border-x-0 border-t-0 justify-between">
-        <div className="ml-5 flex items-end">
-          <img className="w-14 font-head" src={happy} alt="laugh_gif" />
-          <p className="text-white">DaDJokesDatabase</p>
-        </div>
-        <div className=" flex justify-end w-full">
-          <div className="text-white flex w-96 justify-around mr-10 mt-5">
-            <div>Home</div>
-            <Link to="/add" className="hover:text-green-300">
-              Add your joke
-            </Link>
-            <div>About</div>
-            <div>
-              <Link to="/login">Login</Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Nav />
       <div className="text-white flex-col bg-neutral-900 flex justify-center items-center ">
         <div>
           <div>
@@ -53,7 +32,7 @@ function Users() {
                 return (
                   <div
                     key={index}
-                    className=" border py-8 px-10 m-5 rounded-xl my-6 w-6/12 mx-auto"
+                    className=" border py-8 px-10 m-auto rounded-xl w-6/12 mt-4 "
                   >
                     <div className="flex justify-between">
                       <p className="pl-4"> {item.name}</p> <p>{item.email}</p>

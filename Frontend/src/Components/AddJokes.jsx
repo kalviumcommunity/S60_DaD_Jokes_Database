@@ -14,7 +14,7 @@ function AddJokes() {
       .post("http://localhost:4000/add", { name, email, joke })
       .then((result) => {
         console.log(result);
-        navigate("/");
+        navigate("/users");
       })
       .catch((err) => console.log(err));
   };
