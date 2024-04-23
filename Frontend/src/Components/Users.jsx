@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import happy from "../assets/happy.gif";
+import Nav from "./Nav";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -23,21 +23,7 @@ function Users() {
 
   return (
     <div>
-      <div className="bg-neutral-950 py-6 border flex border-x-0 border-t-0 justify-between">
-        <div className="ml-5 flex items-end">
-          <img className="w-14 font-head" src={happy} alt="laugh_gif" />
-          <p className="text-white">DaDJokesDatabase</p>
-        </div>
-        <div className=" flex justify-end w-full">
-          <div className="text-white flex w-96 justify-around mr-10 mt-5">
-            <div>Home</div>
-            <Link to="/add" className="hover:text-green-300">
-              Add your joke
-            </Link>
-            <div>About</div>
-          </div>
-        </div>
-      </div>
+      <Nav />
       <div className="text-white flex-col bg-neutral-900 flex justify-center items-center ">
         <div>
           <div>

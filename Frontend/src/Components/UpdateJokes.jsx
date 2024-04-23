@@ -4,26 +4,30 @@ import axios from "axios";
 
 function UpdateJokes() {
   const { id } = useParams();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [joke, setJoke] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/getUser/"+id)
+      .get("http://localhost:4000/getUser/" + id)
       .then((result) => {
-        console.log(result)
-        setJoke(result.data.joke)
-    })
+        console.log(result);
+        setName(result.data.name);
+        setEmail(result.data.email);
+        setJoke(result.data.joke);
+      })
       .catch((err) => console.log(err));
   }, [id]);
 
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:4000/updateUser/${id}`, { joke })
+      .put(`http://localhost:4000/updateUser/${id}`, { name, email, joke })
       .then((result) => {
         console.log(result);
-        navigate("/"); 
+        navigate("/users");
       })
       .catch((err) => console.log(err));
   };
