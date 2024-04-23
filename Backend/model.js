@@ -15,6 +15,6 @@ const Jokes = mongoose.Schema({
   },
 });
 
-const model = mongoose.model("dad jokes", Jokes);
 
+const model = mongoose.model("dad jokes", Jokes);
 module.exports = model;

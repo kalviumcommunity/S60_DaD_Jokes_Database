@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const UserModel = require("./model");
 const Joi = require("joi");
+const Login = require("./login");
 app.use(cors());
 app.use(express.json());
 
@@ -51,10 +52,6 @@ app.post("/add", (request, response) => {
 
 app.put("/updateUser/:id", (req, res) => {
   const id = req.params.id;
-  const validationResult = data.validate(req.body);
-  if (validationResult.error) {
-    return res.status(400).send(validationResult.error.message);
-  }
   UserModel.findByIdAndUpdate(id, { joke: req.body.joke })
     .then((users) => {
       res.status(201).json(users);
@@ -67,6 +64,17 @@ app.put("/updateUser/:id", (req, res) => {
 app.delete("/deleteUser/:id", (req, res) => {
   const id = req.params.id;
   UserModel.findByIdAndDelete(id)
+    .then((users) => {
+      res.status(201).json(users);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+});
+
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+  Login.create(req.body)
     .then((users) => {
       res.status(201).json(users);
     })

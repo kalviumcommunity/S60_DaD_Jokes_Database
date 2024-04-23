@@ -8,10 +8,7 @@ const cors=require("cors")
 const URI = process.env.URI;
 app.use(cors())
 mongoose
-  .connect(URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(URI )
   .then(() => {
     console.log("Connected");
     app.get("/", (req, res) => {
