@@ -10,7 +10,7 @@ function Nav() {
     deleteCookie("email");
     deleteCookie("password");
     // setLogin(false);
-    console.log("deleted");
+    console.log("KO");
   };
   return (
     <div>
