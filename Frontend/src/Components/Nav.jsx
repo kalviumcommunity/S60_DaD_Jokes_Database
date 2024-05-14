@@ -20,11 +20,13 @@ function Nav() {
           <p className="text-white">DaDJokesDatabase</p>
         </div>
         <div className=" flex justify-end w-full">
-          <div className="text-white flex w-96 justify-around mr-1 mt-5">
-            <div className="hover:text-cyan-400 cursor-pointer">Home</div>
+          <div className="text-white flex w-96 justify-around mr-2 mt-5">
             <Link to="/add" className="hover:text-green-300">
               Add your joke
             </Link>
+            <div className="hover:text-cyan-400">
+              <Link to={"/filter"}>Filter</Link>
+            </div>
             <div>
               <Link
                 className="hover:text-cyan-400"

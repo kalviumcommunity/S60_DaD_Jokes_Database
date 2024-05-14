@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 const data = Joi.object({
-  name: Joi.string().required(),
+  createdBy: Joi.string().required(),
   email: Joi.string().email().required(),
   joke: Joi.string().required(),
 });

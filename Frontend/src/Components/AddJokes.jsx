@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 import "../App.css";
 
 function AddJokes() {
-  const [name, setName] = useState("");
+  const [createdBy, setName] = useState("");
   const [email, setEmail] = useState("");
   const [joke, setJoke] = useState("");
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/add", { name, email, joke })
+      .post("http://localhost:4000/add", { createdBy, email, joke })
       .then((result) => {
         console.log(result);
         navigate("/users");
