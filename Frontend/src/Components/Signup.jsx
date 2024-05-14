@@ -15,11 +15,10 @@ function Signup() {
       .post("http://localhost:4000/signup", { name, email, password })
       .then((res) => {
         console.log(res);
-        if(res.data.alert){
-            alert("jedhewhdkjewhj")
-        }
-        else{
-        navigate("/users");
+        if (res.data.alert) {
+          alert("Successfully SignedIn");
+        } else {
+          navigate("/users");
         }
       })
       .catch((err) => console.log(err));

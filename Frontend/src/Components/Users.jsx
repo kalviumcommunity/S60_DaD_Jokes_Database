@@ -32,12 +32,12 @@ function Users() {
                 return (
                   <div
                     key={index}
-                    className=" border py-8 px-10 m-auto rounded-xl w-6/12 mt-4 "
+                    className=" border m-auto py-8 px-10 rounded-xl w-7/12 mt-4 "
                   >
                     <div className="flex justify-between">
-                      <p className="pl-4"> {item.name}</p> <p>{item.email}</p>
+                      <p className="pl-4"> {item.createdBy}</p> <p>{item.email}</p>
                     </div>
-                    <div className="p-4 mr-48 ">{item.joke}</div>
+                    <div className="p-4 mr-52 ">{item.joke}</div>
                     <div className="flex items-center justify-between">
                       <div>
                         <Link to={`/update/${item._id}`}>

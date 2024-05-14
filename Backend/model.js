@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const Jokes = mongoose.Schema({
-  name: {
+  createdBy: {
     type: String,
     required: true,
   },
